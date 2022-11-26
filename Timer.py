@@ -1,4 +1,3 @@
-#countdown timer app
 import tkinter as tk
 from time import sleep
 from tkinter import ttk, StringVar
@@ -139,7 +138,6 @@ minutes,seconds=loadLastSetting()
 root=tk.Tk()
 root.title("Timer")
 root.attributes('-topmost', 1)
-root.geometry="width=600"
 labelCountdown=ttk.Label(root, text=timeRemaining, font=("",48))
 labelMinutes=ttk.Label(root, text="Minutes:")
 dropdownMinutes=ttk.Combobox(root, value=minutesMenu, width=10)
