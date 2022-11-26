@@ -16,7 +16,7 @@ def loadLastSetting():
             seconds=seconds[12:]
             print(minutes,seconds)
             
-    except OSError or TypeError:
+    except OSError:
         createSettings()
         minutes=0
         seconds=0
