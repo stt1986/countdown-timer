@@ -13,7 +13,6 @@ def loadLastSetting():
             minutes=minutes[12:]
             seconds=data[1]
             seconds=seconds[12:]
-            print(minutes,seconds)
             
     except OSError:
         createSettings()
@@ -127,7 +126,6 @@ def populateMenus():
     for i in range (1,4):
         secondsMenu.append(i*15)
 
-timeRemaining=0
 minutesMenu=[0,1,2,3,4]
 secondsMenu=[]
 isPaused=False
@@ -138,7 +136,9 @@ minutes,seconds=loadLastSetting()
 root=tk.Tk()
 root.title("Timer")
 root.attributes('-topmost', 1)
-labelCountdown=ttk.Label(root, text=timeRemaining, font=("",48))
+root.geometry("225x225")
+root.resizable(False, False)
+labelCountdown=ttk.Label(root, text="0:00", font=("",48))
 labelMinutes=ttk.Label(root, text="Minutes:")
 dropdownMinutes=ttk.Combobox(root, value=minutesMenu, width=10)
 labelSeconds=ttk.Label(root, text="Seconds:")
@@ -148,7 +148,7 @@ dropdownSeconds.set(seconds)
 
 labelCountdown.grid(columnspan=2)
 labelMinutes.grid(row=2,column=0)
-dropdownMinutes.grid(row=3,column=0)
+dropdownMinutes.grid(row=3,column=0,padx=(5))
 labelSeconds.grid(row=2,column=1)
 dropdownSeconds.grid(row=3,column=1)
 
